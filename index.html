@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style>
+      .container {
+        width: auto;
+        max-width: 680px;
+        padding: 0 15px;
+      }
+    </style>
+</head>
+<body class="d-flex flex-column h-100">
+  <nav class="navbar bg-body-tertiary">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a id="navTitle" class="navbar-brand" href="index.html">#</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="flex-shrink-0">
+    <div class="container-fluid">
+
+      <form class="row row-cols-lg-auto g-3 align-items-center">
+        <div class="col-12">
+          <input type="text" class="form-control" name="desc" id="desc" placeholder="Description">
+        </div>
+        <div class="col-12">
+          <input type="text" class="form-control" name="amount" id="amount" placeholder="Amount">
+        </div>
+        <div class="col-12">
+          <input type="text" class="form-control" name="value" id="value" placeholder="Value">
+        </div>
+        <span id="btnUpdate" style="display: none;">
+          <input type="hidden" id="idUpdate" name="idUpdate">
+          <button type="button" class="btn btn-success" onclick="updateData();">Save</button>
+          <button type="button" class="btn btn-light" onclick="resetForm();">Cancel</button>
+        </span>
+        <span id="btnAdd">
+          <button type="button" class="btn btn-success" onclick="addData();">Add</button>
+          <button type="button" class="btn btn-light" onclick="resetForm();">Reset</button>
+          <button type="button" class="btn btn-light" onclick="deleteList();">Delete list</button>
+        </span>
+      </form>
+
+      <div id="errors" class="alert alert-warning" role="alert" style="display: none;"></div>
+    
+      <table class="table table-hover" id="listTable"></table>
+  
+    </div>
+  </main>
+
+  <footer class="footer mt-auto py-3 bg-light">
+    <div class="container">
+      <div class="position-relative">
+        <h4 class="position-absolute top-50 start-50 translate-middle text-success">
+          Total: <span id="totalValue">0,00</span>
+        </h4>
+    </div>
+    </div>
+  </footer>
+
+  <script src="js/config.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    initListStorage();
+  </script>
+</body>
+</html>
